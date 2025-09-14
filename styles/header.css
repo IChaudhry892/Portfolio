@@ -92,8 +92,17 @@
 }
 
 @media (max-width: 800px) {
+  #header {
+    padding: 0 2rem;
+  }
+  .header-left {
+    gap: 0.5rem;
+  }
   #header h2 {
     font-size: 1rem;
+  }
+  #theme-switch {
+    transform: scale(0.67);
   }
   #navbar a {
     font-size: 1rem;

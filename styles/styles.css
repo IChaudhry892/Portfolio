@@ -47,6 +47,9 @@ body {
   font-family: var(--normal-font);
   margin: 0;
 }
+html, body {
+  overflow-x: hidden;
+}
 p {
   margin: 0;
 }
