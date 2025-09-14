@@ -1,0 +1,198 @@
+:root {
+  --color-bg: #eeeeee;          /* page background */
+  --color-surface: #ffffff;     /* card/project surface */
+  --color-text: #1c1c1c;        /* main text */
+  --color-heading: #111111;     /* section headings */
+  --color-text-hover: #0077b6;  /* hover on links/icons */
+  --color-accent: #97c8da;      /* navbar/underline */
+  --color-accent-rgb: 151, 200, 218;
+  --color-accent-secondary: #3ca0d0;
+  --color-accent-secondary-rgb: 60, 160, 208;
+  --color-icon: #02699C;        /* social/contact icons */
+  --color-box-shadow: 0, 0, 0;
+  --color-toggle-bg: #eeeeee;
+  --color-toggle-icon: #02699C;
+
+  --normal-font: Poppins, Arial, sans-serif;
+  --header-font: Poppins, Arial, sans-serif;
+  --secondary-font: Poppins, Arial, sans-serif;
+}
+
+.dark-mode {
+  --color-bg: #2c2d32;
+  --color-surface: #36373e;
+  --color-text: #f2f2f2;
+  --color-heading: #ffffff;
+  --color-text-hover: #99e6ff; /* lighter hover for dark */
+  --color-accent: #97c8da;     /* brighter accent */
+  --color-accent-rgb: 151, 200, 218;
+  --color-accent-secondary: #3ca0d0;
+  --color-accent-secondary-rgb: 60,160,208;
+  --color-icon: #3ca0d0;
+  --color-box-shadow: 255, 255, 255;
+  --color-toggle-bg: #2c2d32;
+  --color-toggle-icon: #97c8da;
+}
+
+body, #header, #projects, #contact, .contact-h1, #profile-link, #contact-link, #theme-switch, .intro-h1, .project-tile {
+  transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--normal-font);
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+section h1 {
+  margin: 0;
+  font-size: 3rem;
+  position: relative;
+  margin-bottom: 2rem;
+  color: var(--color-heading);
+}
+section h1::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+#welcome-section {
+  height: 100vh;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.intro {
+  max-width: 900px;
+  width: 85%;
+  text-align: center;
+}
+.intro p {
+  font-size: 1.25rem;
+}
+.social-links {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+#profile-link {
+  text-decoration: none;
+  color: var(--color-icon);
+  font-size: 2.3rem;
+  font-family: var(--secondary-font);
+  padding: 0 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+#profile-link i{
+  font-size: 2.8rem;
+}
+#profile-link:hover {
+  transform: scale(1.18);
+  color: var(--color-accent);
+}
+
+#projects {
+  background-color: var(--color-surface);
+  text-align: center;
+  padding: 3rem 3rem;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+.project-tile {
+  background-color: var(--color-bg);
+  border-radius: 15px;
+  text-align: center;
+  aspect-ratio: 1 / 1;
+  padding: 10px;
+  cursor: pointer;
+  border: 2px solid var(--color-accent);
+  transition: all 0.15s ease-in-out;
+}
+.project-tile:hover {
+  border: 2px solid var(--color-icon);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(var(--color-box-shadow), 0.2);
+}
+.project {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1.5rem;
+}
+.project-image {
+  height: calc(100% - 5rem);
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.project-title {
+  margin-top: 1.4rem;
+  font-weight: 500;
+}
+
+#contact {
+  background-color: var(--color-bg);
+  text-align: center;
+  padding: 3rem 3rem;
+}
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+.contact {
+  display: flex;
+  padding: 0 1rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+.contact i{
+  font-size: 2rem;
+}
+#contact-link {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+  font-family: var(--secondary-font);
+  position: relative;
+}
+#contact-link:hover {
+  color: var(--color-text-hover);
+}
+#contact-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-text-hover);
+  transition: width 0.3s;
+}
+#contact-link:hover::after {
+  width: 100%;
+}
